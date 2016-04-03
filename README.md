@@ -4,8 +4,19 @@ Simple script to automatically upload screenshots to a remote host, archive scre
 
 # Usage
 
-Configure with environment variables like:
+Configure with environment variables and run the binary
 
-```
-USER=dewey HOST=example.com PORT=22 RPATH=/home/example/public_www/img.example.com/ LPATH=/Users/dewey/Desktop/ ARCHIVE=/Users/dewey/.archive FILTER=^Screen.Shot.[0-9-]*.\w*.[0-9.]*.png go run upload.go
-```
+
+`USER` - Username used on the remote server
+
+`HOST` - Hostname of the remote server
+
+`PORT` - Port used for SSH on remote server (Default: `22`)
+
+`RPATH` - Remote Path where files should be moved on the remote server
+
+`LPATH` - Local Path where we are going to watch for new additions
+
+`ARCHIVE` - Path to directory where files will be archived
+
+`FILTER` - Regex to filter out files that should be automatically uploaded (Default: `^Screen.Shot.[0-9-]*.\w*.[0-9.]*.png` for Mac OS screen shots)
