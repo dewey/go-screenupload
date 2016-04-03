@@ -15,6 +15,8 @@ Configure with environment variables and run the binary
 
 `RPATH` - Remote Path where files should be moved on the remote server
 
+`RURL` - URL where the image will be hosted (public_www directory)
+
 `LPATH` - Local Path where we are going to watch for new additions
 
 `ARCHIVE` - Path to directory where files will be archived

@@ -27,6 +27,7 @@ type Config struct {
 	HostName string // Hostname of the remote server
 	Port     string // Port used for SSH on remote server
 	RPath    string // Remote Path where files should be moved on the remote server
+	RUrl     string // URL where the image will be accessible on the remote server
 	LPath    string // Local Path where we are going to watch for new additions
 	Archive  string // Path to directory where files will be archived
 	Filter   string // Regex to filter out files that should be automatically uploaded
@@ -145,7 +146,7 @@ func upload(cfg Config, f File) error {
 	}
 
 	// send notification using OS default notifier
-	fn.URL = fmt.Sprintf("https://img.notmyhostna.me/%s", fn.Name)
+	fn.URL = fmt.Sprintf("%s/%s", cfg.RUrl, fn.Name)
 
 	// add url to clipboard
 	clipboard.WriteAll(fn.URL)
