@@ -50,6 +50,7 @@ func init() {
 		Port:     os.Getenv("PORT"),
 		RPath:    os.Getenv("RPATH"),
 		LPath:    os.Getenv("LPATH"),
+		RUrl:     os.Getenv("RURL"),
 		Archive:  os.Getenv("ARCHIVE"),
 		Filter:   os.Getenv("FILTER"),
 	}
